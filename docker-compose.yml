@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    stdin_open: true
+    tty: true
+    tmpfs:
+      - /tmp
+      - /app/tmp/pids
+    volumes:
+      - .:/app
+      - bundle:/app/tmp/bundle
+    ports:
+      - "3000:3000"
+    entrypoint: /app/entrypoint.sh
+    command: bundle exec rails server --binding 0.0.0.0
+
+volumes:
+  bundle:

@@ -1,0 +1,2 @@
+module Api::SchedulingsHelper
+end

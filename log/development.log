@@ -1,0 +1,701 @@
+Started GET "/" for 127.0.0.1 at 2023-03-23 20:56:14 +0545
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/schedulings" for 127.0.0.1 at 2023-03-23 20:56:14 +0545
+Processing by SchedulingsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+Redirected to http://127.0.0.1:3000/session/new
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms | Allocations: 5745)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2023-03-23 20:56:14 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1077)
+  Rendered layout layouts/application.html.erb (Duration: 983.3ms | Allocations: 98659)
+Completed 200 OK in 991ms (Views: 986.9ms | ActiveRecord: 0.0ms | Allocations: 102000)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/session" for 127.0.0.1 at 2023-03-23 20:57:24 +0545
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"grace@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 25ms (ActiveRecord: 0.8ms | Allocations: 5309)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-23 20:57:24 +0545
+Started GET "/schedulings" for 127.0.0.1 at 2023-03-23 20:57:24 +0545
+Processing by SchedulingsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 370882803], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  Rendering layout layouts/application.html.erb
+  Rendering schedulings/index.html.erb within layouts/application
+  [1m[36mScheduling Load (0.1ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings"[0m
+  ↳ app/views/schedulings/index.html.erb:16
+  Rendered schedulings/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 4325)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 6636)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.6ms | Allocations: 8878)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2023-03-23 20:57:35 +0545
+Processing by SessionsController#destroy as TURBO_STREAM
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 456)
+
+
+Started DELETE "/" for 127.0.0.1 at 2023-03-23 20:57:35 +0545
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/schedulings" for 127.0.0.1 at 2023-03-23 20:57:36 +0545
+Processing by SchedulingsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+Redirected to http://127.0.0.1:3000/session/new
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 964)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2023-03-23 20:57:36 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 593)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2850)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3101)
+
+
+Started POST "/session" for 127.0.0.1 at 2023-03-23 21:04:17 +0545
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"grace@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms | Allocations: 1457)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-23 21:04:17 +0545
+Started GET "/schedulings" for 127.0.0.1 at 2023-03-23 21:04:17 +0545
+Processing by SchedulingsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 370882803], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  Rendering layout layouts/application.html.erb
+  Rendering schedulings/index.html.erb within layouts/application
+  [1m[36mScheduling Load (0.1ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings"[0m
+  ↳ app/views/schedulings/index.html.erb:16
+  Rendered schedulings/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 776)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3055)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 3990)
+
+
+Started GET "/api/schedulings" for 127.0.0.1 at 2023-03-23 21:04:28 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 370882803], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  Rendering api/schedulings/index.json.jbuilder
+  [1m[36mScheduling Load (0.1ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings"[0m
+  ↳ app/views/api/schedulings/index.json.jbuilder:1
+  Rendered collection of api/schedulings/_scheduling.json.jbuilder [2 times] (Duration: 2.2ms | Allocations: 392)
+  Rendered api/schedulings/index.json.jbuilder (Duration: 8.0ms | Allocations: 1436)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 3008)
+
+
+Started GET "/api/schedulings/129344923" for 127.0.0.1 at 2023-03-23 21:04:50 +0545
+Processing by Api::SchedulingsController#show as JSON
+  Parameters: {"id"=>"129344923"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 370882803], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  [1m[36mScheduling Load (0.6ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings" WHERE "schedulings"."id" = ? LIMIT ?[0m  [["id", 129344923], ["LIMIT", 1]]
+  ↳ app/controllers/api/schedulings_controller.rb:7:in `show'
+  Rendering api/schedulings/show.json.jbuilder
+  Rendered api/schedulings/_scheduling.json.jbuilder (Duration: 0.8ms | Allocations: 228)
+  Rendered api/schedulings/show.json.jbuilder (Duration: 2.7ms | Allocations: 525)
+Completed 200 OK in 8ms (Views: 3.0ms | ActiveRecord: 0.8ms | Allocations: 2513)
+
+
+Started GET "/schedulings" for 127.0.0.1 at 2023-03-23 21:04:52 +0545
+Processing by SchedulingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 370882803], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  Rendering layout layouts/application.html.erb
+  Rendering schedulings/index.html.erb within layouts/application
+  [1m[36mScheduling Load (0.1ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings"[0m
+  ↳ app/views/schedulings/index.html.erb:16
+  Rendered schedulings/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 764)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3054)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 3963)
+
+
+Started GET "/api/schedulings/129344923" for 127.0.0.1 at 2023-03-23 21:04:57 +0545
+Processing by Api::SchedulingsController#show as JSON
+  Parameters: {"id"=>"129344923"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 370882803], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  [1m[36mScheduling Load (0.2ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings" WHERE "schedulings"."id" = ? LIMIT ?[0m  [["id", 129344923], ["LIMIT", 1]]
+  ↳ app/controllers/api/schedulings_controller.rb:7:in `show'
+  Rendering api/schedulings/show.json.jbuilder
+  Rendered api/schedulings/_scheduling.json.jbuilder (Duration: 0.4ms | Allocations: 136)
+  Rendered api/schedulings/show.json.jbuilder (Duration: 1.0ms | Allocations: 326)
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 1688)
+
+
+Started GET "/api/schedulings/188584605" for 127.0.0.1 at 2023-03-23 21:05:03 +0545
+Processing by Api::SchedulingsController#show as JSON
+  Parameters: {"id"=>"188584605"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 370882803], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  [1m[36mScheduling Load (0.1ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings" WHERE "schedulings"."id" = ? LIMIT ?[0m  [["id", 188584605], ["LIMIT", 1]]
+  ↳ app/controllers/api/schedulings_controller.rb:7:in `show'
+  Rendering api/schedulings/show.json.jbuilder
+  Rendered api/schedulings/_scheduling.json.jbuilder (Duration: 0.4ms | Allocations: 136)
+  Rendered api/schedulings/show.json.jbuilder (Duration: 0.8ms | Allocations: 326)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1686)
+
+
+Started GET "/" for ::1 at 2023-03-23 21:12:27 +0545
+Started GET "/schedulings" for ::1 at 2023-03-23 21:12:27 +0545
+Processing by SchedulingsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 2000)
+
+
+Started GET "/session/new" for ::1 at 2023-03-23 21:12:27 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 511)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 14331)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 14999)
+
+
+Started POST "/session" for ::1 at 2023-03-23 21:12:42 +0545
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"grace@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms | Allocations: 1859)
+
+
+Started GET "/" for ::1 at 2023-03-23 21:12:42 +0545
+Started GET "/schedulings" for ::1 at 2023-03-23 21:12:42 +0545
+Processing by SchedulingsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 370882803], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  Rendering layout layouts/application.html.erb
+  Rendering schedulings/index.html.erb within layouts/application
+  [1m[36mScheduling Load (0.1ms)[0m  [1m[34mSELECT "schedulings".* FROM "schedulings"[0m
+  ↳ app/views/schedulings/index.html.erb:16
+  Rendered schedulings/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1747)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4038)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 6120)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:12:50 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 97)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:12:56 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms | Allocations: 755)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:13:00 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.2ms | Allocations: 741)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:14:47 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.7ms | Allocations: 3092)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:15:07 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.4ms | Allocations: 741)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:16:31 +0545
+Processing by Api::SchedulingsController#index as JSON
+Completed 500 Internal Server Error in 1ms (Allocations: 1123)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00000001079b7e88>
+Did you mean?  try):
+  
+app/controllers/api_controller.rb:10:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:17:36 +0545
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ (pry):2:in `block in authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:19:23 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:11:in `block in authenticate'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:11:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 5097ms (ActiveRecord: 0.5ms | Allocations: 10726)
+
+
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:11:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 239526ms (ActiveRecord: 0.8ms | Allocations: 64409)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:21:44 +0545
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:21:58 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.7ms | Allocations: 7028)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:22:18 +0545
+Processing by Api::SchedulingsController#index as JSON
+Completed 500 Internal Server Error in 1ms (Allocations: 973)
+
+
+  
+SyntaxError (/Users/nirajanpokharel/Documents/codetest/app/models/user.rb:12: dynamic constant assignment
+    HA1 = Rails.application.credenti...
+    ^~~
+/Users/nirajanpokharel/Documents/codetest/app/models/user.rb:17: dynamic constant assignment
+    HA2 = Digest::MD5.hexdigest("#{r...
+    ^~~
+):
+  
+app/models/user.rb:12: dynamic constant assignment
+app/models/user.rb:17: dynamic constant assignment
+app/models/user.rb:12: dynamic constant assignment
+app/models/user.rb:17: dynamic constant assignment
+app/models/user.rb:12: dynamic constant assignment
+app/models/user.rb:17: dynamic constant assignment
+app/controllers/api_controller.rb:10:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:22:56 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 3919)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:12:in `digest_password'
+app/models/user.rb:6:in `authenticate'
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:22:57 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1517)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:12:in `digest_password'
+app/models/user.rb:6:in `authenticate'
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:23:58 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 42898ms (ActiveRecord: 0.8ms | Allocations: 35362)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:24:46 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 77)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:24:47 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (Allocations: 61)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:24:49 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (Allocations: 60)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:24:51 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 60)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:24:59 +0545
+Processing by Api::SchedulingsController#index as JSON
+Completed 500 Internal Server Error in 3ms (Allocations: 994)
+
+
+  
+SyntaxError (/Users/nirajanpokharel/Documents/codetest/app/models/user.rb:12: dynamic constant assignment
+    HA1 = Rails.application.credenti...
+    ^~~
+/Users/nirajanpokharel/Documents/codetest/app/models/user.rb:17: dynamic constant assignment
+    HA2 = Digest::MD5.hexdigest("#{r...
+    ^~~
+):
+  
+app/models/user.rb:12: dynamic constant assignment
+app/models/user.rb:17: dynamic constant assignment
+app/models/user.rb:12: dynamic constant assignment
+app/models/user.rb:17: dynamic constant assignment
+app/models/user.rb:12: dynamic constant assignment
+app/models/user.rb:17: dynamic constant assignment
+app/controllers/api_controller.rb:10:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:26:57 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 3698ms (ActiveRecord: 1.0ms | Allocations: 14372)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:6:in `HA1'
+app/models/user.rb:12:in `authenticate'
+app/controllers/api_controller.rb:13:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:27:06 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 3781ms (ActiveRecord: 0.6ms | Allocations: 12029)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:6:in `HA1'
+app/models/user.rb:12:in `authenticate'
+app/controllers/api_controller.rb:13:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:27:30 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 2732ms (ActiveRecord: 0.7ms | Allocations: 14362)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:6:in `HA1'
+app/models/user.rb:12:in `authenticate'
+app/controllers/api_controller.rb:13:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:27:42 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.2ms | Allocations: 3820)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:6:in `HA1'
+app/models/user.rb:12:in `authenticate'
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:27:44 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1514)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:6:in `HA1'
+app/models/user.rb:12:in `authenticate'
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:27:53 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 61)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:28:02 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1515)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:6:in `HA1'
+app/models/user.rb:12:in `authenticate'
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:28:16 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:36:16 +0545
+Completed 500 Internal Server Error in 484872ms (ActiveRecord: 0.6ms | Allocations: 25056)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:7:in `HA1'
+app/models/user.rb:13:in `authenticate'
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 221)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:36:33 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms | Allocations: 5410)
+
+
+  
+NoMethodError (undefined method `valid_password?' for #<User:0x000000012812f678>):
+  
+app/controllers/api_controller.rb:11:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:36:49 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 35126ms (ActiveRecord: 0.6ms | Allocations: 20506)
+
+
+  
+NoMethodError (undefined method `valid_password?' for #<User:0x000000011ddca618>):
+  
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:38:19 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 2858ms (ActiveRecord: 0.6ms | Allocations: 15556)
+
+
+  
+NoMethodError (undefined method `valid_password?' for #<User:0x00000001049e1510>):
+  
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:38:27 +0545
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:38:54 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 81)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:39:03 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Completed 500 Internal Server Error in 128255ms (ActiveRecord: 0.8ms | Allocations: 26146)
+
+
+  
+NoMethodError (undefined method `valid_password?' for #<User:0x00000001263010e8>):
+  
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:41:51 +0545
+Completed 500 Internal Server Error in 223979ms (ActiveRecord: 0.5ms | Allocations: 191110)
+
+
+  
+NoMethodError (undefined method `valid_password?' for #<User:0x0000000122e3dc08>):
+  
+app/controllers/api_controller.rb:12:in `block in authenticate'
+app/controllers/api_controller.rb:9:in `authenticate'
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 78)
+
+
+Started GET "/schedulings" for ::1 at 2023-03-23 21:42:11 +0545
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:42:11 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 70)
+
+
+Processing by SchedulingsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/concerns/authentication.rb:10:in `authenticate'
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 4399)
+
+
+Started GET "/session/new" for ::1 at 2023-03-23 21:42:17 +0545
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 983)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 36551)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 41318)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:42:41 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 254)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:42:51 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.7ms | Allocations: 9748)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:43:11 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.6ms | Allocations: 682)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:44:41 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 77)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:44:52 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 12939ms (ActiveRecord: 1.0ms | Allocations: 33279)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:45:15 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 60)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:47:15 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 77)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:47:22 +0545
+Processing by Api::SchedulingsController#index as JSON
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "grace@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:10:in `block in authenticate'
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:50:56 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
+Started GET "/api/schedulings" for ::1 at 2023-03-23 21:51:04 +0545
+Processing by Api::SchedulingsController#index as JSON
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 94)
+
+
